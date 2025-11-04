@@ -1,11 +1,4 @@
-<div class="contenedor-registro">
-  <h2>Crear Cuenta de Usuario</h2>
-
-  <form method="POST" action="">
-    {% csrf_token %}
-
-    <div class="formulario-campos">{{ form.as_p }}</div>
-
-    <button type="submit" class="boton-primario">Registrar</button>
-  </form>
-</div>
+<form method="post">
+  {% csrf_token %} {{ form.as_p }}
+  <button type="submit">Enviar</button>
+</form>

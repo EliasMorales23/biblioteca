@@ -7,9 +7,17 @@ class Libro(models.Model):
     autor = models.CharField()
     titulo = models.CharField(max_length=30)
     estado = models.BooleanField()
-    id_prestamo = models.ForeignKey(prestamo_models.Prestamo)
-    numero_socio = models.ForeignKey(usuario_models.Usuario)
+    id_prestamo = models.ForeignKey(prestamo_models.Prestamo, on_delete=models.CASCADE,
+        null=True,
+        blank=True
+        )
+    numero_socio = models.ForeignKey(usuario_models.Usuario, on_delete=models.CASCADE,
+        null=True,
+        blank=True
+        )
     
+    def __str__(self):
+        return self.titulo
     
     
     
